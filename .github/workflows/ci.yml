@@ -33,7 +33,7 @@ jobs:
         uses: tj-actions/changed-files@v45
         with:
           base_sha: ${{ github.event.pull_request.base.sha }}
-          files: src/**/*
+          files: app/**/*
 
       - name: List all changed files
         env:
@@ -65,7 +65,7 @@ jobs:
         run: npm run lint
 
       - name: Run prettier --check
-        run: npx prettier src/ --check
+        run: npx prettier app/ --check
 
       - name: Run build
         run: npm run build
