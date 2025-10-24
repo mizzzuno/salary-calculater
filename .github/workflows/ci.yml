@@ -33,7 +33,7 @@ jobs:
         uses: tj-actions/changed-files@v45
         with:
           base_sha: ${{ github.event.pull_request.base.sha }}
-          files: src/**/*
+          files: app/**/*
 
       - name: List all changed files
         env:
