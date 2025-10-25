@@ -187,7 +187,7 @@
 
 | 分類           | 技術                                                 |
 | -------------- | ---------------------------------------------------- |
-| フロントエンド | Next.js 14, TypeScript, MUI                          |
+| フロントエンド | Next.js 16, TypeScript, MUI                          |
 | バックエンド   | Supabase（Auth, DB, Edge Functions）                 |
 | デプロイ       | Vercel                                               |
 | データベース   | PostgreSQL（Supabase）                               |
