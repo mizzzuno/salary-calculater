@@ -1,5 +1,5 @@
-import React from "react";
+import Box from '@mui/joy/Box';
 
 export default function TestButton() {
-  return <div>TestButton</div>;
+  return <Box component="span">Test</Box>;
 }

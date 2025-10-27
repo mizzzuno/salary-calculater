@@ -3,11 +3,7 @@ import IconButton from '@mui/joy/IconButton';
 import Divider from '@mui/joy/Divider';
 import ListItemButton from '@mui/joy/ListItemButton';
 import Sheet from '@mui/joy/Sheet';
-// Local TestButton component defined below
-
-const TestButton = () => {
-  return <Box component="span">Test</Box>;
-};
+import TestButton from './TestButton';
 
 export default function ColorInversionFooter() {
   return (
