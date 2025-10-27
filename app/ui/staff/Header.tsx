@@ -31,9 +31,8 @@ export default function Header() {
       <Divider sx={{ my: 2 }} />
 
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <IconButton variant="plain">
+          <Box sx={{ mr: 1 }}>月選択</Box>
           <TestButton />
-        </IconButton>
       </Box>
       
     </Sheet>
