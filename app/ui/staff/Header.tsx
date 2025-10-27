@@ -1,8 +1,10 @@
 import Box from "@mui/joy/Box";
-import IconButton from "@mui/joy/IconButton";
 import Divider from "@mui/joy/Divider";
 import Sheet from "@mui/joy/Sheet";
-import TestButton from "./TestButton";
+import MonthSelect from "./MonthSelect";
+// const dynamicMonthSelect = dynamic(() => import("@/app/ui/staff/MonthSelect"), {
+//   ssr: false,
+// });
 
 export default function Header() {
   return (
@@ -31,8 +33,7 @@ export default function Header() {
       <Divider sx={{ my: 2 }} />
 
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Box sx={{ mr: 1 }}>月選択</Box>
-          <TestButton />
+          <MonthSelect />
       </Box>
       
     </Sheet>
