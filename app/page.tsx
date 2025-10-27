@@ -9,8 +9,8 @@ const NoSSR = dynamic(() => import("@/app/ui/staff/MonthSelect"), {
 export default function Home() {
   return (
     <>
-      <NoSSR />
       <Header />
+      <NoSSR />
     </>
   );
 }

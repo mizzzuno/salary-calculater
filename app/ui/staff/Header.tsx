@@ -1,42 +1,41 @@
-import Box from '@mui/joy/Box';
-import IconButton from '@mui/joy/IconButton';
-import Divider from '@mui/joy/Divider';
-import ListItemButton from '@mui/joy/ListItemButton';
-import Sheet from '@mui/joy/Sheet';
-import TestButton from './TestButton';
+import Box from "@mui/joy/Box";
+import IconButton from "@mui/joy/IconButton";
+import Divider from "@mui/joy/Divider";
+import Sheet from "@mui/joy/Sheet";
+import TestButton from "./TestButton";
 
-export default function ColorInversionFooter() {
+export default function Header() {
   return (
     <Sheet
       variant="solid"
-      color={'neutral'}
+      color={"neutral"}
       invertedColors
       sx={[
         {
           flexGrow: 1,
           p: 2,
-          borderRadius: { xs: 0, sm: 'sm' },
+          borderRadius: { xs: 0, sm: "sm" },
         },
       ]}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            alignItems: { md: 'flex-start' },
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: 2,
-          }}
-        >
-          <ListItemButton sx={{display: 'flex', alignItems: 'center'}}>勤務履歴 確認・登録</ListItemButton>
-        </Box>        
+      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Box
+            sx={{
+              fontSize: { xs: "1.5rem" },
+            }}
+          >
+            勤務履歴 確認・登録
+          </Box>
       </Box>
+
       <Divider sx={{ my: 2 }} />
-      <IconButton variant="plain">
-        <TestButton />
-      </IconButton>
+
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <IconButton variant="plain">
+          <TestButton />
+        </IconButton>
+      </Box>
+      
     </Sheet>
   );
 }
