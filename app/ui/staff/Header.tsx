@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <Sheet
       variant="solid"
-      color={"neutral"}
+      color="neutral"
       invertedColors
       sx={[
         {
