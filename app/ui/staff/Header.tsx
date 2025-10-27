@@ -12,13 +12,11 @@ export default function Header() {
       variant="solid"
       color="neutral"
       invertedColors
-      sx={[
-        {
-          flexGrow: 1,
-          p: 2,
-          borderRadius: { xs: 0, sm: "sm" },
-        },
-      ]}
+      sx={{
+        flexGrow: 1,
+        p: 2,
+        borderRadius: { xs: 0, sm: "sm" },
+      }}
     >
       <Box
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
