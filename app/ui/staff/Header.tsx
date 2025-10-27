@@ -20,22 +20,23 @@ export default function Header() {
         },
       ]}
     >
-      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <Box
-            sx={{
-              fontSize: { xs: "1.5rem" },
-            }}
-          >
-            勤務履歴 確認・登録
-          </Box>
+      <Box
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
+        <Box
+          sx={{
+            fontSize: { xs: "1.5rem" },
+          }}
+        >
+          勤務履歴 確認・登録
+        </Box>
       </Box>
 
       <Divider sx={{ my: 2 }} />
 
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <MonthSelect />
+        <MonthSelect />
       </Box>
-      
     </Sheet>
   );
 }
