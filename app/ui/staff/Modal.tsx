@@ -2,7 +2,6 @@ import * as React from 'react';
 import Button from '@mui/joy/Button';
 import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
-import Input from '@mui/joy/Input';
 import Modal from '@mui/joy/Modal';
 import ModalDialog from '@mui/joy/ModalDialog';
 // import DialogTitle from '@mui/joy/DialogTitle';
@@ -11,6 +10,7 @@ import Stack from '@mui/joy/Stack';
 import Add from '@mui/icons-material/Add';
 import RegisterButton from './RegisterButton';
 import InputExpense from './InputExpense';
+import InputTime from './InputTime';
 
 export default function RegisterModalDialog() {
   const [open, setOpen] = React.useState<boolean>(false);
@@ -37,19 +37,20 @@ export default function RegisterModalDialog() {
             <Stack spacing={2}>
               <FormControl>
                 <FormLabel>勤務開始時間</FormLabel>
-                <Input autoFocus required />
+                {/* <InputTime autoFocus required /> */}
+                <InputTime />
               </FormControl>
               <FormControl>
                 <FormLabel>勤務終了時間</FormLabel>
-                <Input required />
+                <InputTime />
               </FormControl>
               <FormControl>
                 <FormLabel>休憩開始時間</FormLabel>
-                <Input required />
+                <InputTime />
               </FormControl>
               <FormControl>
                 <FormLabel>休憩終了時間</FormLabel>
-                <Input required />
+                <InputTime />
               </FormControl>
               <FormControl>
                 <FormLabel>交通費</FormLabel>
