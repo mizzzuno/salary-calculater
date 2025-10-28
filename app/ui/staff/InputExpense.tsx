@@ -30,7 +30,7 @@ const NumericFormatAdapter = React.forwardRef<NumericFormatProps, CustomProps>(
         prefix="￥"
       />
     );
-  }
+  },
 );
 
 export default function InputReactNumberFormat() {

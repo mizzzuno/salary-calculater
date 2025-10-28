@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { MobileTimePicker } from "@mui/x-date-pickers/MobileTimePicker";
@@ -14,18 +13,7 @@ export default function ResponsiveTimePickers() {
   const jst = now.tz("Asia/Tokyo");
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer
-        components={[
-          "TimePicker",
-          "MobileTimePicker",
-          "DesktopTimePicker",
-          "StaticTimePicker",
-        ]}
-      >
-        <MobileTimePicker
-          defaultValue={dayjs(jst.format("YYYY-MM-DDTHH:mm"))}
-        />
-      </DemoContainer>
+      <MobileTimePicker defaultValue={dayjs(jst.format("YYYY-MM-DDTHH:mm"))} />
     </LocalizationProvider>
   );
 }
