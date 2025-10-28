@@ -7,10 +7,12 @@ import timezone from "dayjs/plugin/timezone";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
-const now = dayjs().utc();
-const jst = now.tz("Asia/Tokyo");
+
+
 
 export default function ResponsiveTimePickers() {
+  const now = dayjs().utc();
+  const jst = now.tz("Asia/Tokyo");
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <MobileTimePicker defaultValue={dayjs(jst.format("YYYY-MM-DDTHH:mm"))} />
