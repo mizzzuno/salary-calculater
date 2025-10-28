@@ -14,10 +14,9 @@ export default function DatePickerViews() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={["DatePicker"]}>
         <DatePicker
-          label={'"month" and "year"'}
           views={["month", "year"]}
           minDate={dayjs("2025-09")}
-          maxDate={dayjs("2025-12")}
+          maxDate={dayjs("2026-12")}
           value={value}
           onChange={(newValue) => setValue(newValue)}
           sx={{ width: 150 }}
