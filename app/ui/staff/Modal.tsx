@@ -10,8 +10,9 @@ import ModalDialog from '@mui/joy/ModalDialog';
 import Stack from '@mui/joy/Stack';
 import Add from '@mui/icons-material/Add';
 import RegisterButton from './RegisterButton';
+import InputExpense from './InputExpense';
 
-export default function BasicModalDialog() {
+export default function RegisterModalDialog() {
   const [open, setOpen] = React.useState<boolean>(false);
   return (
     <React.Fragment>
@@ -52,7 +53,7 @@ export default function BasicModalDialog() {
               </FormControl>
               <FormControl>
                 <FormLabel>交通費</FormLabel>
-                <Input required />
+                <InputExpense />
               </FormControl>
               <Button type="submit">登録</Button>
             </Stack>
