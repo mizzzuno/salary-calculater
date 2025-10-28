@@ -8,8 +8,6 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-
-
 export default function ResponsiveTimePickers() {
   const now = dayjs().utc();
   const jst = now.tz("Asia/Tokyo");
