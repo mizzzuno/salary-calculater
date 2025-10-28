@@ -7,7 +7,7 @@ import { Box } from "@mui/joy";
 export default function Home() {
   return (
     <>
-    <Box
+      <Box
         sx={{
           position: "fixed",
           width: "100%",
