@@ -6,9 +6,10 @@ import { MobileTimePicker } from "@mui/x-date-pickers/MobileTimePicker";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 export default function ResponsiveTimePickers() {
-  dayjs.extend(utc);
-  dayjs.extend(timezone);
   const now = dayjs().utc();
   const jst = now.tz("Asia/Tokyo");
   return (
