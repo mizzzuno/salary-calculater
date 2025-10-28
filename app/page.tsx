@@ -1,7 +1,6 @@
 "use client";
 
 import Header from "@/app/ui/staff/Header";
-import RegisterButton from "@/app/ui/staff/RegisterButton";
 import { Box } from "@mui/joy";
 import Modal from "@/app/ui/staff/Modal";
 

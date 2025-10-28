@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { NumericFormat, NumericFormatProps } from 'react-number-format';
-import FormControl from '@mui/joy/FormControl';
+import * as React from "react";
+import { NumericFormat, NumericFormatProps } from "react-number-format";
+import FormControl from "@mui/joy/FormControl";
 // import FormLabel from '@mui/joy/FormLabel';
-import Input from '@mui/joy/Input';
+import Input from "@mui/joy/Input";
 
 interface CustomProps {
   onChange: (event: { target: { name: string; value: string } }) => void;
@@ -34,7 +34,7 @@ const NumericFormatAdapter = React.forwardRef<NumericFormatProps, CustomProps>(
 );
 
 export default function InputReactNumberFormat() {
-  const [value, setValue] = React.useState('0');
+  const [value, setValue] = React.useState("0");
   return (
     <FormControl>
       {/* <FormLabel>React number format</FormLabel> */}
