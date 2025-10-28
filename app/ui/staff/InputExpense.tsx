@@ -30,7 +30,7 @@ const NumericFormatAdapter = React.forwardRef<NumericFormatProps, CustomProps>(
         prefix="￥"
       />
     );
-  },
+  }
 );
 
 export default function InputReactNumberFormat() {
@@ -41,7 +41,6 @@ export default function InputReactNumberFormat() {
       <Input
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        placeholder="Placeholder"
         slotProps={{
           input: {
             component: NumericFormatAdapter,
