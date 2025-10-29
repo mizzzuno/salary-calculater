@@ -1,18 +1,29 @@
-import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
-import Add from "@mui/icons-material/Add";
+import { ReactNode } from "react";
 
-export default function ButtonIcons() {
+type RegisterButtonProps = {
+  onClick?: () => void;
+  variant?: "solid" | "outlined" | "soft" | "plain";
+  color?: "primary" | "neutral" | "danger" | "success" | "warning";
+  startDecorator?: ReactNode;
+  children?: ReactNode;
+};
+
+export default function RegisterButton({
+  onClick,
+  variant = "solid",
+  color = "neutral",
+  startDecorator,
+  children,
+}: RegisterButtonProps) {
   return (
-    <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-      <Button
-        startDecorator={<Add />}
-        color="neutral"
-        onClick={function () {}}
-        variant="solid"
-      >
-        出退勤を登録
-      </Button>
-    </Box>
+    <Button
+      startDecorator={startDecorator}
+      color={color}
+      onClick={onClick}
+      variant={variant}
+    >
+      {children ?? "出退勤を登録"}
+    </Button>
   );
 }

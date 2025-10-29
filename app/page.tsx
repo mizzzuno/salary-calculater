@@ -1,8 +1,8 @@
 "use client";
 
 import Header from "@/app/ui/staff/Header";
-import RegisterButton from "@/app/ui/staff/RegisterButton";
 import { Box } from "@mui/joy";
+import Modal from "@/app/ui/staff/Modal";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
           zIndex: 1000,
         }}
       >
-        <RegisterButton />
+        <Modal />
       </Box>
     </>
   );
