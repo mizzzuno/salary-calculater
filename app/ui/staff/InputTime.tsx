@@ -10,8 +10,6 @@ dayjs.extend(timezone);
 
 export default function ResponsiveDateTimePickers() {
   const jst = dayjs().tz("Asia/Tokyo");
-  console.log("JST Time:", jst.format());
-
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <MobileDateTimePicker defaultValue={jst} />
