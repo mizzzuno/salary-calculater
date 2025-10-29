@@ -9,8 +9,8 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export default function ResponsiveDateTimePickers() {
-  const now = dayjs().utc();
-  const jst = now.tz("Asia/Tokyo");
+  const jst = dayjs().tz("Asia/Tokyo");
+  console.log("JST Time:", jst.format());
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
