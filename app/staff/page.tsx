@@ -1,8 +1,8 @@
 "use client";
 
 import Header from "@/app/ui/staff/Header";
-import { Box } from "@mui/joy";
 import Modal from "@/app/ui/staff/Modal";
+import { Box } from "@mui/joy";
 
 export default function StaffPage() {
   return (
