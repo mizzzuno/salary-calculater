@@ -2,6 +2,7 @@
 
 import Header from "@/app/ui/staff/Header";
 import Modal from "@/app/ui/staff/Modal";
+import Grid from "@/app/ui/staff/Grid";
 import { Box } from "@mui/joy";
 
 export default function StaffPage() {
@@ -15,6 +16,16 @@ export default function StaffPage() {
         }}
       >
         <Header />
+      </Box>
+      <Box
+        sx={{
+          position: "fixed",
+          top: 200,
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <Grid />
       </Box>
       <Box
         sx={{
