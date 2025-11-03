@@ -133,7 +133,7 @@ for (let i = 0; i < 50; i += 1) {
 
 export default function MultilineEditing() {
   return (
-    <div style={{ height: 300, width: '100%' }}>
+    <div style={{ height: 600, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
