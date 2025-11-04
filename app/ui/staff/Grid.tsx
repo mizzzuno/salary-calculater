@@ -88,14 +88,26 @@ const multilineColumn: GridColTypeDef = {
 };
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID" },
-  { field: "username", headerName: "Name", width: 150 },
-  { field: "age", headerName: "Age", width: 80, type: "number" },
+  { field: "id", headerName: "ID", align: "center", headerAlign: "center" },
+  {
+    field: "username",
+    headerName: "Name",
+    align: "center",
+    headerAlign: "center",
+  },
+  {
+    field: "age",
+    headerName: "Age",
+    type: "number",
+    align: "center",
+    headerAlign: "center",
+  },
   {
     field: "bio",
     headerName: "Bio",
-    width: 80,
     editable: true,
+    align: "center",
+    headerAlign: "center",
     ...multilineColumn,
   },
 ];
