@@ -14,7 +14,6 @@ import Paper from "@mui/material/Paper";
 import {
   randomInt,
   randomUserName,
-  randomArrayItem,
 } from "@mui/x-data-grid-generator";
 
 function isKeyboardEvent(event: any): event is React.KeyboardEvent {
