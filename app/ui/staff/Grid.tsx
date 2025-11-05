@@ -89,24 +89,27 @@ const columns: GridColDef[] = [
     headerName: "日付",
     align: "center",
     headerAlign: "center",
+    type: "string",
   },
   {
     field: "jobstart",
-    headerName: "勤務開始",
+    headerName: "開始",
+    type: "string",
     align: "center",
     headerAlign: "center",
   },
   {
     field: "jobend",
-    headerName: "勤務終了",
-    type: "number",
+    headerName: "終了",
+    type: "string",
     align: "center",
     headerAlign: "center",
   },
   {
     field: "hours",
-    headerName: "勤務時間",
+    headerName: "時間",
     editable: true,
+    type: "string",
     align: "center",
     headerAlign: "center",
     ...multilineColumn,
@@ -121,14 +124,24 @@ const columns: GridColDef[] = [
   },
 ];
 
+function randomTime(startHour: number, endHour: number) {
+  const hour = randomInt(startHour, endHour);
+  const minute = randomInt(0, 1) === 0 ? "00" : "30";
+  return `${hour.toString().padStart(2, "0")}:${minute}`;
+}
+
 const rows: GridRowModel[] = [];
 
 for (let i = 0; i < 50; i += 1) {
+  const jobstart = randomTime(9, 17);
+  const jobend = randomTime(17, 23);
+  // 勤務時間は差分計算でも良いですが、ここでは例として固定値
+  const hours = "08:00";
   rows.push({
-    date: i,
-    jobstart: randomInt(9, 17),
-    jobend: randomInt(17, 24),
-    hours: randomInt(1, 8),
+    date: getDateWithWeekday(i),
+    jobstart,
+    jobend,
+    hours,
     salary: randomInt(30000, 60000),
   });
 }
@@ -152,4 +165,13 @@ export default function MultilineEditing() {
       />
     </div>
   );
+}
+
+function getDateWithWeekday(offset: number) {
+  const date = new Date();
+  date.setDate(date.getDate() + offset);
+  const d = date.getDate().toString().padStart(2, "0");
+  const week = ["日", "月", "火", "水", "木", "金", "土"];
+  const w = week[date.getDay()];
+  return `${d} ${w}`;
 }
