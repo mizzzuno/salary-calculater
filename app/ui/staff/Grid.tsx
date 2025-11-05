@@ -135,13 +135,19 @@ const rows: GridRowModel[] = [];
 for (let i = 0; i < 50; i += 1) {
   const jobstart = randomTime(9, 17);
   const jobend = randomTime(17, 23);
-  // 勤務時間は差分計算でも良いですが、ここでは例として固定値
-  const hours = "08:00";
+
+  // 時間と分を分解して勤務時間を計算
+  const [startHour, startMin] = jobstart.split(":").map(Number);
+  const [endHour, endMin] = jobend.split(":").map(Number);
+  const hours = Math.floor(endHour + endMin / 60 - (startHour + startMin / 60));
+  const minutes = (endHour + endMin / 60 - (startHour + startMin / 60) - hours) * 60;
+  const hoursString = `${hours}:${minutes.toString().padStart(2, "0")}`;
+
   rows.push({
     date: getDateWithWeekday(i),
     jobstart,
     jobend,
-    hours,
+    hours: hoursString,
     salary: randomInt(30000, 60000),
   });
 }
