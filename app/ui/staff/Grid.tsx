@@ -11,10 +11,7 @@ import {
 import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
-import {
-  randomInt,
-  randomUserName,
-} from "@mui/x-data-grid-generator";
+import { randomInt, randomUserName } from "@mui/x-data-grid-generator";
 
 function isKeyboardEvent(event: any): event is React.KeyboardEvent {
   return !!event.key;
@@ -87,23 +84,36 @@ const multilineColumn: GridColTypeDef = {
 };
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", align: "center", headerAlign: "center" },
   {
-    field: "username",
-    headerName: "Name",
+    field: "date",
+    headerName: "日付",
     align: "center",
     headerAlign: "center",
   },
   {
-    field: "age",
-    headerName: "Age",
+    field: "jobstart",
+    headerName: "勤務開始",
+    align: "center",
+    headerAlign: "center",
+  },
+  {
+    field: "jobend",
+    headerName: "勤務終了",
     type: "number",
     align: "center",
     headerAlign: "center",
   },
   {
-    field: "bio",
-    headerName: "Bio",
+    field: "hours",
+    headerName: "勤務時間",
+    editable: true,
+    align: "center",
+    headerAlign: "center",
+    ...multilineColumn,
+  },
+  {
+    field: "salary",
+    headerName: "給料",
     editable: true,
     align: "center",
     headerAlign: "center",
@@ -115,10 +125,11 @@ const rows: GridRowModel[] = [];
 
 for (let i = 0; i < 50; i += 1) {
   rows.push({
-    id: i,
-    username: randomUserName(),
-    age: randomInt(10, 80),
-    bio: randomInt(10, 80),
+    date: i,
+    jobstart: randomInt(9, 17),
+    jobend: randomInt(17, 24),
+    hours: randomInt(1, 8),
+    salary: randomInt(30000, 60000),
   });
 }
 
@@ -129,6 +140,7 @@ export default function MultilineEditing() {
       <DataGrid
         rows={rows}
         columns={columns}
+        getRowId={(row) => row.date} // 追加
         onCellEditStop={(params, event) => {
           if (params.reason !== GridCellEditStopReasons.enterKeyDown) {
             return;
