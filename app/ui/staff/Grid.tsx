@@ -17,7 +17,15 @@ function isKeyboardEvent(event: React.SyntheticEvent | undefined): event is Reac
   return !!event && "key" in event;
 }
 
-function EditTextarea(props: GridRenderEditCellParams<any, string>) {
+type StaffRow = {
+  date: string;
+  jobstart: string;
+  jobend: string;
+  hours: string;
+  salary: number;
+};
+
+function EditTextarea(props: GridRenderEditCellParams<StaffRow, string>) {
   const { id, field, value, colDef, hasFocus } = props;
   const [valueState, setValueState] = React.useState(value);
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>();
