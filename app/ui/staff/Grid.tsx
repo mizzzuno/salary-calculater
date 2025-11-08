@@ -13,8 +13,8 @@ import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
 import { randomInt } from "@mui/x-data-grid-generator";
 
-function isKeyboardEvent(event: any): event is React.KeyboardEvent {
-  return !!event.key;
+function isKeyboardEvent(event: React.SyntheticEvent | undefined): event is React.KeyboardEvent {
+  return !!event && "key" in event;
 }
 
 function EditTextarea(props: GridRenderEditCellParams<any, string>) {
