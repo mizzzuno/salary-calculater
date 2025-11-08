@@ -13,7 +13,9 @@ import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
 import { randomInt } from "@mui/x-data-grid-generator";
 
-function isKeyboardEvent(event: React.SyntheticEvent | undefined): event is React.KeyboardEvent {
+function isKeyboardEvent(
+  event: React.SyntheticEvent | undefined,
+): event is React.KeyboardEvent {
   return !!event && "key" in event;
 }
 
@@ -50,10 +52,10 @@ function EditTextarea(props: GridRenderEditCellParams<StaffRow, string>) {
       setValueState(newValue);
       apiRef.current.setEditCellValue(
         { id, field, value: newValue, debounceMs: 200 },
-        event
+        event,
       );
     },
-    [apiRef, field, id]
+    [apiRef, field, id],
   );
 
   return (
@@ -148,7 +150,8 @@ for (let i = 0; i < 50; i += 1) {
   const [startHour, startMin] = jobstart.split(":").map(Number);
   const [endHour, endMin] = jobend.split(":").map(Number);
   const hours = Math.floor(endHour + endMin / 60 - (startHour + startMin / 60));
-  const minutes = (endHour + endMin / 60 - (startHour + startMin / 60) - hours) * 60;
+  const minutes =
+    (endHour + endMin / 60 - (startHour + startMin / 60) - hours) * 60;
   const hoursString = `${hours}:${minutes.toString().padStart(2, "0")}`;
 
   rows.push({
