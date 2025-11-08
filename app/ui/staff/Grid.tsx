@@ -46,10 +46,10 @@ function EditTextarea(props: GridRenderEditCellParams<StaffRow, string>) {
       setValueState(newValue);
       apiRef.current.setEditCellValue(
         { id, field, value: newValue, debounceMs: 200 },
-        event
+        event,
       );
     },
-    [apiRef, field, id]
+    [apiRef, field, id],
   );
 
   return (
