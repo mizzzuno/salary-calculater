@@ -11,7 +11,7 @@ import {
 import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
-import { randomInt, randomUserName } from "@mui/x-data-grid-generator";
+import { randomInt } from "@mui/x-data-grid-generator";
 
 function isKeyboardEvent(event: any): event is React.KeyboardEvent {
   return !!event.key;
