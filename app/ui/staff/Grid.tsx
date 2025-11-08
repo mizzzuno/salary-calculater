@@ -13,12 +13,6 @@ import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
 import { randomInt } from "@mui/x-data-grid-generator";
 
-function isKeyboardEvent(
-  event: React.SyntheticEvent | undefined,
-): event is React.KeyboardEvent {
-  return !!event && "key" in event;
-}
-
 type StaffRow = {
   date: string;
   jobstart: string;
@@ -52,10 +46,10 @@ function EditTextarea(props: GridRenderEditCellParams<StaffRow, string>) {
       setValueState(newValue);
       apiRef.current.setEditCellValue(
         { id, field, value: newValue, debounceMs: 200 },
-        event,
+        event
       );
     },
-    [apiRef, field, id],
+    [apiRef, field, id]
   );
 
   return (
@@ -169,13 +163,10 @@ export default function MultilineEditing() {
       <DataGrid
         rows={rows}
         columns={columns}
-        getRowId={(row) => row.date} // 追加
+        getRowId={(row) => row.date}
         onCellEditStop={(params, event) => {
           if (params.reason !== GridCellEditStopReasons.enterKeyDown) {
             return;
-          }
-          if (isKeyboardEvent(event) && !event.ctrlKey && !event.metaKey) {
-            event.defaultMuiPrevented = true;
           }
         }}
       />
