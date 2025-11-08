@@ -46,10 +46,10 @@ function EditTextarea(props: GridRenderEditCellParams<StaffRow, string>) {
       setValueState(newValue);
       apiRef.current.setEditCellValue(
         { id, field, value: newValue, debounceMs: 200 },
-        event,
+        event
       );
     },
-    [apiRef, field, id],
+    [apiRef, field, id]
   );
 
   return (
@@ -164,7 +164,7 @@ export default function MultilineEditing() {
         rows={rows}
         columns={columns}
         getRowId={(row) => row.date}
-        onCellEditStop={(params, event) => {
+        onCellEditStop={(params) => {
           if (params.reason !== GridCellEditStopReasons.enterKeyDown) {
             return;
           }
