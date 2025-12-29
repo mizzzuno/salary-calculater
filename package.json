@@ -17,11 +17,10 @@
     "@mui/joy": "^5.0.0-beta.52",
     "@mui/material": "^7.3.4",
     "@mui/x-data-grid": "^8.16.0",
-    "@mui/x-data-grid-generator": "^8.16.0",
     "@mui/x-date-pickers": "^8.15.0",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.18",
-    "next": "16.0.0",
+    "next": "16.1.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-number-format": "^5.4.4"
@@ -32,7 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.0.0",
+    "eslint-config-next": "16.1.1",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"

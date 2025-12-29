@@ -11,7 +11,6 @@ import {
 import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
-import { randomInt } from "@mui/x-data-grid-generator";
 
 type StaffRow = {
   date: string;
@@ -20,6 +19,10 @@ type StaffRow = {
   hours: string;
   salary: number;
 };
+
+function randomInt(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function EditTextarea(props: GridRenderEditCellParams<StaffRow, string>) {
   const { id, field, value, colDef, hasFocus } = props;
