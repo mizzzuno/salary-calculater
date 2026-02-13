@@ -2,7 +2,7 @@
 
 import Header from "@/app/ui/staff/Header";
 import Modal from "@/app/ui/staff/Modal";
-import Grid from "@/app/ui/staff/Grid";
+import Grid from "@/app/ui/staff/grid/Grid";
 import { Box } from "@mui/joy";
 
 export default function StaffPage() {
