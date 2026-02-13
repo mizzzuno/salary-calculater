@@ -11,6 +11,7 @@ import {
 import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 import Popper from "@mui/material/Popper";
 import Paper from "@mui/material/Paper";
+import CalcWorkTime from "./CalcWorkTime";
 
 type StaffRow = {
   date: string;
@@ -143,22 +144,22 @@ for (let i = 0; i < 50; i += 1) {
   const jobstart = randomTime(9, 17);
   const jobend = randomTime(17, 23);
 
-  // 時間と分を分解して勤務時間を計算
-  function CalcWorkTime(
-    jobstart: string,
-    jobend: string,
-  ): [number, number, string] {
-    const [startHour, startMin] = jobstart.split(":").map(Number);
-    const [endHour, endMin] = jobend.split(":").map(Number);
-    const hours = Math.floor(
-      endHour + endMin / 60 - (startHour + startMin / 60),
-    );
-    const minutes =
-      (endHour + endMin / 60 - (startHour + startMin / 60) - hours) * 60;
-    const hoursString = `${hours}:${minutes.toString().padStart(2, "0")}`;
+  // // 時間と分を分解して勤務時間を計算
+  // function CalcWorkTime(
+  //   jobstart: string,
+  //   jobend: string,
+  // ): [number, number, string] {
+  //   const [startHour, startMin] = jobstart.split(":").map(Number);
+  //   const [endHour, endMin] = jobend.split(":").map(Number);
+  //   const hours = Math.floor(
+  //     endHour + endMin / 60 - (startHour + startMin / 60),
+  //   );
+  //   const minutes =
+  //     (endHour + endMin / 60 - (startHour + startMin / 60) - hours) * 60;
+  //   const hoursString = `${hours}:${minutes.toString().padStart(2, "0")}`;
 
-    return [hours, minutes, hoursString];
-  }
+  //   return [hours, minutes, hoursString];
+  // }
 
   const [hours, minutes, hoursString] = CalcWorkTime(jobstart, jobend);
 
