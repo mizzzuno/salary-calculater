@@ -21,10 +21,6 @@ type StaffRow = {
   salary: number;
 };
 
-function randomInt(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function EditTextarea(props: GridRenderEditCellParams<StaffRow, string>) {
   const { id, field, value, colDef, hasFocus } = props;
   const [valueState, setValueState] = React.useState(value);
@@ -131,6 +127,10 @@ const columns: GridColDef[] = [
     ...multilineColumn,
   },
 ];
+
+function randomInt(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function randomTime(startHour: number, endHour: number) {
   const hour = randomInt(startHour, endHour);
